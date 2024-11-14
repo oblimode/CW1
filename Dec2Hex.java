@@ -1,26 +1,28 @@
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 class Dec2Hex
 {
 public static int Arg1;
     public static void main(String args[])    {
-        try{
+        Logger logger = Logger.getLogger(Dec2Hex.class.getName());
+	try{ // Exception handler
            Arg1 = Integer.parseInt(args[0]);
         }
-        catch(NumberFormatException e) {
-           System.err.println("You entered a special character or decimal number. Please use integers only.");
-           System.exit(0);
+        catch(NumberFormatException e) { // Invalid letter used when starting program
+           logger.severe("You entered a special character or decimal number. Please use integers only.");
+           System.exit(1);
         }
-        catch(ArrayIndexOutOfBoundsException e) {
-           System.err.println("Please enter a number, or one that's greater than zero.");
-           System.exit(0);
+        catch(ArrayIndexOutOfBoundsException e) { // No number entered
+           logger.severe("Please enter a number, or one that's greater than zero.");
+           System.exit(1);
         }
 
         char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         int rem, num;
         num = Arg1;
         String hexadecimal="";
-        System.out.println("Converting the Decimal Value " + num + " to Hex...");
+        logger.info("Converting the Decimal Value " + num + " to Hex..."); // Tell user conversion is starting
 
         while(num != 0)
         {
@@ -29,7 +31,8 @@ public static int Arg1;
             num= num/16;
         }
 
-        System.out.println("Hexadecimal representation is: " + hexadecimal);
+	// Show hex result
+        logger.info("Hexadecimal representation is: " + hexadecimal);
 
     }
 }
