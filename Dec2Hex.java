@@ -22,7 +22,8 @@ public static int Arg1;
         int rem, num;
         num = Arg1;
         String hexadecimal="";
-        System.out.println("Converting the Decimal Value " + num + " to Hex..."); // Tell user conversion is starting
+        String convMessage = "Converting the Decimal Value " + num + " to Hex...";
+        logger.info(convMessage); // Tell user conversion is starting
 
         while(num != 0)
         {
@@ -32,7 +33,8 @@ public static int Arg1;
         }
 
 	// Show hex result
-        System.out.println("Hexadecimal representation is: " + hexadecimal);
+	String hexMessage = "Hexadecimal representation is: " + hexadecimal;
+        logger.info(hexMessage);
 
     }
 }
