@@ -1,5 +1,5 @@
 import java.util.logging.Logger;
-
+ 
 class Dec2Hex
 {
 public static int Arg1;
