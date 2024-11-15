@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.logging.Logger;
 
 class Dec2Hex
@@ -23,7 +22,6 @@ public static int Arg1;
         num = Arg1;
         String hexadecimal="";
         String convMessage = "Converting the Decimal Value " + num + " to Hex...";
-	logger.info("Got the number.");
         logger.info(convMessage); // Tell user conversion is starting
 
         while(num != 0)
