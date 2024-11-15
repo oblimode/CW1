@@ -18,11 +18,12 @@ public static int Arg1;
            System.exit(1);
         }
 
-        char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+        char ch[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'}; // initialise
         int rem, num;
         num = Arg1;
         String hexadecimal="";
         String convMessage = "Converting the Decimal Value " + num + " to Hex...";
+	logger.info("Got the number.");
         logger.info(convMessage); // Tell user conversion is starting
 
         while(num != 0)
